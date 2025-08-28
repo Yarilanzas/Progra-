@@ -33,6 +33,13 @@ void Rutina::agregarEjercicio(Ejercicio* ejerNuevo )
 	
 }
 
+//string Rutina::generarRutina()
+//{
+
+	//return string();
+//}
+
+
 string Rutina::mostrarRutina(){
 	stringstream s; 
 	for (int i = 0; i < can < i++) {
@@ -40,3 +47,4 @@ string Rutina::mostrarRutina(){
 	}
 	return ss.str();
 }
+

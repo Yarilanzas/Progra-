@@ -12,10 +12,6 @@ public:
 	Rutina(int, int, int, string);
 
 	void agregarEjercicio(Ejercicio*);
+	//string generarRutina();
 	string mostrarRutina(); 
-
-
-
-
-
 };
