@@ -2,6 +2,10 @@
 #include "Instructor.h"
 #include "Medicion.h"
 #include "Rutina.h"
+#include "ClaseGrupal.h"
+
+const int MAX_CLASES = 3;
+const int MAX_MEDI = 10;
 
 class Cliente {
 private:
@@ -14,17 +18,44 @@ private:
 	string fechains;
 	char sexo;
 	
-	Instructor* vins;
-	Rutina* vrut;
+	Instructor* instructor;
+	Rutina* rutina;
 
-	Medicion** vmed;
-	int tam;
-	int can;
+	Medicion** medicion;
+	int canmedi;
 
-
-
-
+	ClaseGrupal** clases;
+	int canclas;
+	
 
 public:
+	Cliente(string = "sin def", string = "sin def",
+		int = 0, string = "sin def", string = "sin def",
+		string = "sin def", char = '-');
+	~Cliente();
+
+	//set
+	void setCedula(string);
+	void setNombre(string);
+	void setTelefono(int);
+	void setCorreo(string);
+	void setFechanac(string);
+	void setFechains(string);
+	void setSexo(char);
+
+	//get
+	string getCedula();
+	string getNombre();
+	int getTelefono();
+	string getCorreo();
+	string getFechanac();
+	string getFechains();
+	char getSexo();
+	
+	Instructor* getInstructor();
+	Rutina* getRutina();
+
+
+	string toString();
 
 };
