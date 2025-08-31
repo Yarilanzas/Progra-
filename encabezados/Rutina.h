@@ -10,6 +10,7 @@ private:
 public: 
 	Rutina();
 	Rutina(int, int, int, string);
+	~Rutina(); 
 
 	void agregarEjercicio(Ejercicio*);
 	//string generarRutina();

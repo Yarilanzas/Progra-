@@ -20,7 +20,10 @@ Rutina::Rutina(int, int, int, int)
 	this->tam = tam; 
 	this->sexo = sexo; 
 }
+Rutina::~Rutina() {
 
+
+}
 void Rutina::agregarEjercicio(Ejercicio* ejerNuevo )
 {
 	if (can < tam) {
