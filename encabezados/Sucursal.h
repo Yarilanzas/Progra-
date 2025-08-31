@@ -48,6 +48,7 @@ public:
 	int getcanClas();
 	int getcanClien();
 
+	//void agregarSucursal(Sucursal*);
 	void agregarInstructor(Instructor*);
 	void  agregarclase(ClaseGrupal*);
 	void agregarCliente(Cliente*);

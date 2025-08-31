@@ -27,6 +27,10 @@ Sucursal::Sucursal(string cod, string prov,string can, string cor, int tel) {
 }
 
 Sucursal::~Sucursal() {
+	for (int i = 0; i < can; ++i) {
+		delete sucursales[i];
+	}
+	delete[] sucursales;
 	delete[] instructores;
 	delete[] clases;
 	delete[] clientes;
@@ -86,6 +90,11 @@ int Sucursal::getcanClien() {
 	return clientes;
 }
 
-void Sucursal::IngresarSucursal() {
-
+void Sucursal::IngresarSucursal(Sucursal* sucu) {
+	if (can < tam) {
+		sucursales[can] = sucu;
+		can++;
+	}
 }
+
+

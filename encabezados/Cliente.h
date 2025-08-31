@@ -6,7 +6,6 @@
 
 const int MAX_CLASES = 3;
 const int MAX_MEDI = 10;
-//const int MAX = 100;
 
 class Cliente {
 private:
