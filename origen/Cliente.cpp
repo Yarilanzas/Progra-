@@ -14,13 +14,13 @@ Cliente::Cliente(string ced, string nom, int tel, string cor,
 	this->instructor = nullptr;
 	this->rutina = nullptr;
 
-	this->canmedi = 0;
+	this->canMedi = 0;
 	this->medicion = new Medicion * [MAX_MEDI];
 	for (int i = 0; i < MAX_MEDI; i++) {
 		this->medicion[i] = nullptr;
 	}
 
-	this->canclas = 0;
+	this->canClas = 0;
 	this->clases = new ClaseGrupal * [MAX_CLASES];
 	for (int i = 0; i < MAX_CLASES; i++) {
 		this->clases[i] = nullptr;
@@ -29,7 +29,7 @@ Cliente::Cliente(string ced, string nom, int tel, string cor,
 
 	//destructor
 	Cliente::~Cliente() {
-		for (int i = 0; i < canmedi; i++) {
+		for (int i = 0; i < canMedi; i++) {
 			delete medicion[i];
 		}
 		delete[]medicion;
@@ -63,6 +63,15 @@ Cliente::Cliente(string ced, string nom, int tel, string cor,
 
 	void Cliente::setSexo (char se) {
 		sexo = se;
+	}
+
+	//set de instructor y rutina
+	void Cliente::setInstructor(Instructor* i) {
+		instructor = i;
+	}
+
+	void Cliente::setRutina(Rutina* r) {
+		rutina = r;
 	}
 
 	//get
@@ -103,6 +112,48 @@ Cliente::Cliente(string ced, string nom, int tel, string cor,
 		return rutina;
 	}
 
+	Medicion* Cliente::getMedicion(int pos) {
+		if (pos >= 0 && pos < canMedi) {
+			return medicion[pos];
+		}
+		return nullptr;
+	}
+
+	ClaseGrupal* Cliente::getClase(int pos) {
+		if (pos >= 0 && pos < canClas) {
+			return clases[pos];
+		}
+		return nullptr;
+	}
+
+	int Cliente::getcanMedi() {
+		return canMedi;
+	}
+
+	int Cliente::getcanClases() {
+		return canClas;
+	}
+
+	void Cliente::agregarMedicion(Medicion* med) {
+		if (canMedi < MAX_MEDI) {
+			medicion[canMedi] = med;
+			canMedi++;
+		}
+		else {
+			cout << "No se permite agregar mas mediciones";
+		}
+	}
+
+	void Cliente::agregarClase(ClaseGrupal* cg) {
+		if (canClas < MAX_CLASES) {
+			clases[canClas] = cg;
+			canClas++;
+		}
+		else {
+			cout << "No se permite matricular mas clases";
+		}
+	}
+
 	//tostring
 	string Cliente::toString() {
 		stringstream s;
@@ -113,17 +164,20 @@ Cliente::Cliente(string ced, string nom, int tel, string cor,
 		s << "\tFecha de Nacimiento: " << fechanac << endl;
 		s << "\tFecha de inscripcion: " << fechains << endl;
 		s << "\tSexo: " << sexo << endl;
-		if (Sucursal != nullptr) {
-			s << "\tSucursal: " << instructor->getSucursal() << endl;
+
+		if (instructor != nullptr) {
+			Sucursal* suc = instructor->getSucursal();
+			if (suc != nullptr) {
+				s << "Sucursal: " << suc->getProvincia() << " - " << suc->getCanton() << endl;
+			}
+			else {
+				s << "Sucursal: No asignada " << endl;
+			}
+			s << "Instructor: " << instructor->getNombre() << endl;
 		}
 		else {
-			s << "\tSucursal: No asignada" << endl:
-		}
-		if (Instructor != nullptr) {
-			s << "\tInstructor: " << instructor->getNombre(); << endl;
-		}
-		else {
-			s << "\tInstructor: No asignado" << endl:
+			s << "Sucursal: No asignada " << endl;
+			s << "Instructor: No asignado " << endl;
 		}
 
 		return s.str();

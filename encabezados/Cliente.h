@@ -22,10 +22,10 @@ private:
 	Rutina* rutina;
 
 	Medicion** medicion;
-	int canmedi;
+	int canMedi;
 
 	ClaseGrupal** clases;
-	int canclas;
+	int canClas;
 	
 
 public:
@@ -43,6 +43,9 @@ public:
 	void setFechains(string);
 	void setSexo(char);
 
+	void setInstructor(Instructor*);
+	void setRutina(Rutina*);
+
 	//get
 	string getCedula();
 	string getNombre();
@@ -55,7 +58,13 @@ public:
 	Instructor* getInstructor();
 	Rutina* getRutina();
 
+	Medicion* getMedicion(int);
+	ClaseGrupal* getClase(int);
+	int getcanMedi();
+	int getcanClas();
 
+	void agregarMedicion(Medicion*);
+	void agregarClase(ClaseGrupal*);
 	string toString();
 
 };

@@ -6,6 +6,8 @@ Sucursal::Sucursal(string cod, string prov,string can, string cor, int tel) {
 	this->canton = can;
 	this->correo = cor;
 	this->telefono = tel;
+	this->can = 0;
+	this
 
 	this->canInstru = 0;
 	this->instructores = new Instructor * [MAX_INSTRUCTORES];
@@ -87,14 +89,8 @@ int Sucursal::getcanClas() {
 }
 
 int Sucursal::getcanClien() {
-	return clientes;
+	return canClien;
 }
 
-void Sucursal::IngresarSucursal(Sucursal* sucu) {
-	if (can < tam) {
-		sucursales[can] = sucu;
-		can++;
-	}
-}
 
 
