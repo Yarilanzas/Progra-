@@ -1,4 +1,5 @@
 #include "Sucursal.h"
+using namespace std;
 
 Sucursal::Sucursal(string cod, string prov,string can, string cor, int tel) {
 	this->codigo = cod;
@@ -6,8 +7,6 @@ Sucursal::Sucursal(string cod, string prov,string can, string cor, int tel) {
 	this->canton = can;
 	this->correo = cor;
 	this->telefono = tel;
-	this->can = 0;
-	this
 
 	this->canInstru = 0;
 	this->instructores = new Instructor * [MAX_INSTRUCTORES];
@@ -29,10 +28,6 @@ Sucursal::Sucursal(string cod, string prov,string can, string cor, int tel) {
 }
 
 Sucursal::~Sucursal() {
-	for (int i = 0; i < can; ++i) {
-		delete sucursales[i];
-	}
-	delete[] sucursales;
 	delete[] instructores;
 	delete[] clases;
 	delete[] clientes;
@@ -80,6 +75,7 @@ int Sucursal::getTelefono() {
 	return telefono;
 }
 
+//get instructores, clases, clientes
 int Sucursal::getcanInstru() {
 	return canInstru;
 }
@@ -92,5 +88,11 @@ int Sucursal::getcanClien() {
 	return canClien;
 }
 
+Cliente* Sucursal::getInstructor(int pos) {
+	if (pos >= 0 && pos < canInstru) {
+		return clientes[pos];
+	}
+	return nullptr;
+}
 
 

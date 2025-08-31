@@ -144,7 +144,7 @@ Cliente::Cliente(string ced, string nom, int tel, string cor,
 		}
 	}
 
-	void Cliente::agregarClase(ClaseGrupal* cg) {
+	void Cliente::MatriculaClase(ClaseGrupal* cg) {
 		if (canClas < MAX_CLASES) {
 			clases[canClas] = cg;
 			canClas++;

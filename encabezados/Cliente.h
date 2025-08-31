@@ -64,7 +64,7 @@ public:
 	int getcanClas();
 
 	void agregarMedicion(Medicion*);
-	void agregarClase(ClaseGrupal*);
+	void MatriculaClase(ClaseGrupal*);
 	string toString();
 
 };

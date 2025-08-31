@@ -26,7 +26,7 @@ private:
 	int canClien;
 
 public:
-	Sucursal(string = "sin def", string = "sin def", string = "sin def"
+	Sucursal(string = "sin def", string = "sin def", string = "sin def",
 		string = "sin def", int = 0);
 	~Sucursal();
 
@@ -50,7 +50,7 @@ public:
 
 	//void agregarSucursal(Sucursal*);
 	void agregarInstructor(Instructor*);
-	void  agregarclase(ClaseGrupal*);
+	void agregarClase(ClaseGrupal*);
 	void agregarCliente(Cliente*);
 	string toString();
 
