@@ -44,11 +44,15 @@ public:
 	string getCorreo();
 	int getTelefono();
 
+
+	Instructor* getInstructor(int);
+	ClaseGrupal* getClase(int pos);
+	Cliente* getCliente(int pos);
+
 	int getcanInstru();
 	int getcanClas();
 	int getcanClien();
 
-	//void agregarSucursal(Sucursal*);
 	void agregarInstructor(Instructor*);
 	void agregarClase(ClaseGrupal*);
 	void agregarCliente(Cliente*);

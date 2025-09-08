@@ -18,13 +18,13 @@ private:
 	string fechains;
 	char sexo;
 	
-	Instructor* instructor;
+	Instructor* vinstructor;
 	Rutina* rutina;
 
-	Medicion** medicion;
+	Medicion** vmedicion;
 	int canMedi;
 
-	ClaseGrupal** clases;
+	ClaseGrupal** vclases;
 	int canClas;
 	
 
@@ -58,8 +58,8 @@ public:
 	Instructor* getInstructor();
 	Rutina* getRutina();
 
-	Medicion* getMedicion(int);
-	ClaseGrupal* getClase(int);
+	Medicion* getMedicion(int pos);
+	ClaseGrupal* getClase(int pos);
 	int getcanMedi();
 	int getcanClas();
 

@@ -104,7 +104,7 @@ Cliente::Cliente(string ced, string nom, int tel, string cor,
 	}
 
 	//get de instructor y rutina
-	Instrcuctor* Cliente::getInstructor() {
+	Instructor* Cliente::getInstructor() {
 		return instructor;
 	}
 
