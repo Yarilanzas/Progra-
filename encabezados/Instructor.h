@@ -27,6 +27,25 @@ public:
 	void setCedula(string);
 	void setNombre(string);
 	void setTelefono(int);
+	void setCorreo(string);
+	void setFechanac(string);
+	Sucursal* setSucursal(Sucursal*);
+
+	string getCedula();
+	string getNombre();
+	int getTelefono();
+	string getCorreo();
+	string getFechanac();
+	Sucursal* getSucursal();
+
+	void agregarEspecialidad(string);
+	string getEspecialidad(int);
+	int getCanEspecialidad();
+
+	Rutina* crearRutina(Cliente*);
+	Medicion* realizarMedicion(Cliente*, float, float, string);
+
+	string toString();
 
 	
 

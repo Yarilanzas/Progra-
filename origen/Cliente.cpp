@@ -3,27 +3,27 @@
 
 Cliente::Cliente(string ced, string nom, int tel, string cor,
 	string nac, string ins, char sex) {
-	this->ced = ced;
-	this->nombre = nom;
-	this->telefono = tel;
-	this->correo = cor;
-	this->fechanac = nac;
-	this->fechains = ins;
-	this->sexo = sex;
+	ced = ced;
+	nombre = nom;
+	telefono = tel;
+	correo = cor;
+	fechanac = nac;
+	fechains = ins;
+	sexo = sex;
 
-	this->instructor = nullptr;
-	this->rutina = nullptr;
-
-	this->canMedi = 0;
-	this->medicion = new Medicion * [MAX_MEDI];
+	instructor = nullptr;
+	rutina = nullptr;
+	
+	canMedi = 0;
+	medicion = new Medicion * [MAX_MEDI];
 	for (int i = 0; i < MAX_MEDI; i++) {
-		this->medicion[i] = nullptr;
+		medicion[i] = nullptr;
 	}
 
-	this->canClas = 0;
-	this->clases = new ClaseGrupal * [MAX_CLASES];
+	canClas = 0;
+	clases = new ClaseGrupal * [MAX_CLASES];
 	for (int i = 0; i < MAX_CLASES; i++) {
-		this->clases[i] = nullptr;
+		clases[i] = nullptr;
 	}
 }
 
